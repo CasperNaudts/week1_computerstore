@@ -1,6 +1,6 @@
 package be.pxl.computerstore.hardware.builder;
 
-import be.pxl.computerstore.hardware.Processor;
+import be.pxl.computerstore.hardware.ComputerCase.Processor;
 
 public class ProcessorBuilder {
 	public static final String VENDOR = "Intel";

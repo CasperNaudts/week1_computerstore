@@ -1,7 +1,8 @@
 package be.pxl.computerstore.hardware;
 
-import be.pxl.computerstore.hardware.ComputerCase;
-import be.pxl.computerstore.hardware.builder.DimensionBuilder;
+import be.pxl.computerstore.hardware.ComputerCase.ComputerCase;
+import be.pxl.computerstore.hardware.ComputerCase.builder.ComputerCaseBuilder;
+import be.pxl.computerstore.hardware.ComputerCase.builder.DimensionBuilder;
 import be.pxl.computerstore.util.Dimension;
 import org.junit.Test;
 
