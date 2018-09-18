@@ -7,13 +7,14 @@ public abstract class ComputerComponent {
     private String name;
     private double price;
     private String articleNumber;
-    private Random random = new Random(99999);
+    private static int number = 0;
 
     public ComputerComponent(String vendor, String name, double price) {
         this.vendor = vendor;
         this.name = name;
         this.price = price;
-        this.articleNumber = vendor.substring(3) + "-" + random.nextInt();
+        number++;
+        this.articleNumber = vendor.substring(3) + String.format("- %05d", number);
     }
 
     public String getVendor() {
