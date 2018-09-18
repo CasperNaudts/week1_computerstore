@@ -27,4 +27,13 @@ public class ComputerCase extends ComputerComponent{
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
+    public void getFullDescription(){
+        System.out.println("ArticleNumber = " + getArticleNumber());
+        System.out.println("Vendor = " + getVendor());
+        System.out.println("Name = " + getName());
+        System.out.println("Price = " + getPrice());
+        System.out.println("Dimension = " + getDimension());
+        System.out.println("Weight = " + getWeight());
+    }
 }

@@ -1,6 +1,5 @@
 package be.pxl.computerstore.hardware;
 
-import java.util.Random;
 
 public abstract class ComputerComponent {
     private String vendor;
@@ -39,5 +38,14 @@ public abstract class ComputerComponent {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getArticleNumber() {
+        return articleNumber;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " (" + articleNumber + ") ";
     }
 }
