@@ -1,47 +1,18 @@
 package be.pxl.computerstore.hardware;
 
-public class HardDisk {
-    private String vendor;
-    private String name;
-    private double price;
-    private int size;
+public class HardDisk extends ComputerComponent {
+    private int capacity;
 
-    public HardDisk(String vendor, String name, double price, int size) {
-        this.vendor = vendor;
-        this.name = name;
-        this.price = price;
-        this.size = size;
+    public HardDisk(String vendor, String name, double price, int capacity) {
+        super(vendor, name, price);
+        this.capacity = capacity;
     }
 
-    public String getVendor() {
-        return vendor;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }
