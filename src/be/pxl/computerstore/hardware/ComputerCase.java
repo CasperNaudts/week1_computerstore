@@ -6,7 +6,7 @@ public class ComputerCase extends ComputerComponent{
     private Dimension dimension;
     private double weight;
 
-    public ComputerCase(String vendor, String name, double price, Dimension dimension, double weight) {
+    public ComputerCase(String vendor, String name, double price) {
         super(vendor, name, price);
         this.dimension = dimension;
         this.weight = weight;

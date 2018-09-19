@@ -30,8 +30,8 @@ public class ComputerSystemTest {
 		ComputerSystem computerSystem = new ComputerSystem();
 		Mouse mouse = new MouseBuilder().build();
 		computerSystem.addPeripheral(mouse);
-		assertNotNull(computerSystem.getPeripherals()[0]);
-		assertEquals(mouse, computerSystem.getPeripherals()[0]);
+		assertNotNull(computerSystem.getPeripheral()[0]);
+		assertEquals(mouse, computerSystem.getPeripheral()[0]);
 	}
 	
 	@Test
@@ -54,9 +54,9 @@ public class ComputerSystemTest {
 		ComputerSystem computerSystem = new ComputerSystem();
 		Mouse mouse = new MouseBuilder().build();
 		computerSystem.addPeripheral(mouse);
-		assertNotNull(computerSystem.getPeripherals()[0]);
+		assertNotNull(computerSystem.getPeripheral()[0]);
 		computerSystem.removePeripheral(mouse.getArticleNumber());
-		assertNull(computerSystem.getPeripherals()[0]);
+		assertNull(computerSystem.getPeripheral()[0]);
 	}
 	
 	@Test

@@ -1,16 +1,18 @@
 package be.pxl.computerstore.hardware;
 
-public class ComputerSystem {
+import be.pxl.computerstore.util.Computable;
+
+public class ComputerSystem implements Computable {
     private Processor processor;
     private HardDisk hardDisk;
     private ComputerCase computerCase;
-    private Peripheral [] peripherals = new Peripheral[3];
+    private Peripheral [] peripheral = new Peripheral[3];
 
     public ComputerSystem(Processor processor, HardDisk hardDisk, ComputerCase computerCase, Peripheral[] peripherals) {
         this.processor = processor;
         this.hardDisk = hardDisk;
         this.computerCase = computerCase;
-        this.peripherals = peripherals;
+        this.peripheral = peripherals;
     }
 
     public Processor getProcessor() {
@@ -37,18 +39,18 @@ public class ComputerSystem {
         this.computerCase = computerCase;
     }
 
-    public Peripheral[] getPeripherals() {
-        return peripherals;
+    public Peripheral[] getPeripheral() {
+        return peripheral;
     }
 
-    public void setPeripherals(Peripheral[] peripheral) {
-        this.peripherals = peripheral;
+    public void setPeripheral(Peripheral[] peripheral) {
+        this.peripheral = peripheral;
     }
 
     public void addPeripheral (Peripheral peripheral){
-        for (int i = 0 ; i < peripherals.length ; i++){
-            if (peripherals[i] == null){
-                peripherals[i] = peripheral;
+        for (int i = 0; i < this.peripheral.length ; i++){
+            if (this.peripheral[i] == null){
+                this.peripheral[i] = peripheral;
                 break;
             }
         }
@@ -56,12 +58,29 @@ public class ComputerSystem {
 
     public int getNumberOfPheripherals(){
         int count = 0;
-        for (int i = 0 ; i < peripherals.length ; i++){
-            if (peripherals[i] != null){
+        for (int i = 0; i < peripheral.length ; i++){
+            if (peripheral[i] != null){
                 count++;
             }
         }
         return count;
     }
 
+    @Override
+    public double totalPriceExcl() {
+        double total;
+        total = getProcessor().getPrice() + getComputerCase().getPrice() + getHardDisk().getPrice();
+
+        for (int i = 0; i < getPeripheral().length ; i++){
+            if (getPeripheral()[i] != null){
+                total = total + getPeripheral()[i].getPrice();
+            }
+        }
+        return total;
+    }
+
+    @Override
+    public double totalPriceIncl() {
+        return totalPriceExcl() * 1.21;
+    }
 }
