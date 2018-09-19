@@ -19,11 +19,11 @@ public class Processor extends ComputerComponent{
             this.clockspeed = 0.7;
         }
     }
-    public void getFullDescription(){
-        System.out.println("ArticleNumber = " + getArticleNumber());
-        System.out.println("Vendor = " + getVendor());
-        System.out.println("Name = " + getName());
-        System.out.println("Price = " + getPrice());
-        System.out.println("Clock speed = " + getClockspeed() + "GHz");
+
+    @Override
+    public String getFullDescription(){
+        StringBuilder output = new StringBuilder(super.getFullDescription());
+        output.append("Clock speed = " + getClockspeed() + "GHz");
+        return output.toString();
     }
 }

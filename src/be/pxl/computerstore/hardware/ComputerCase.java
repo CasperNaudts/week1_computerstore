@@ -28,12 +28,11 @@ public class ComputerCase extends ComputerComponent{
         this.weight = weight;
     }
 
-    public void getFullDescription(){
-        System.out.println("ArticleNumber = " + getArticleNumber());
-        System.out.println("Vendor = " + getVendor());
-        System.out.println("Name = " + getName());
-        System.out.println("Price = " + getPrice());
-        System.out.println("Dimension = " + getDimension());
-        System.out.println("Weight = " + getWeight());
+    @Override
+    public String getFullDescription(){
+        StringBuilder output = new StringBuilder(super.getFullDescription());
+        output.append("Dimension = " + getDimension().toString() + "\n");
+        output.append("Weight = " + getWeight() + "kg");
+        return output.toString();
     }
 }

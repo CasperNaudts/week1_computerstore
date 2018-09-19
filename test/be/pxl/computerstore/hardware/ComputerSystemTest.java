@@ -1,5 +1,8 @@
 package be.pxl.computerstore.hardware;
 
+import be.pxl.computerstore.hardware.builder.ComputerCaseBuilder;
+import be.pxl.computerstore.hardware.builder.MouseBuilder;
+import be.pxl.computerstore.hardware.builder.ProcessorBuilder;
 import be.pxl.computerstore.util.TooManyPeripheralsException;
 import org.junit.Test;
 
@@ -30,8 +33,8 @@ public class ComputerSystemTest {
 		ComputerSystem computerSystem = new ComputerSystem();
 		Mouse mouse = new MouseBuilder().build();
 		computerSystem.addPeripheral(mouse);
-		assertNotNull(computerSystem.getPeripheral()[0]);
-		assertEquals(mouse, computerSystem.getPeripheral()[0]);
+		assertNotNull(computerSystem.getPeripherals()[0]);
+		assertEquals(mouse, computerSystem.getPeripherals()[0]);
 	}
 	
 	@Test
@@ -54,9 +57,9 @@ public class ComputerSystemTest {
 		ComputerSystem computerSystem = new ComputerSystem();
 		Mouse mouse = new MouseBuilder().build();
 		computerSystem.addPeripheral(mouse);
-		assertNotNull(computerSystem.getPeripheral()[0]);
+		assertNotNull(computerSystem.getPeripherals()[0]);
 		computerSystem.removePeripheral(mouse.getArticleNumber());
-		assertNull(computerSystem.getPeripheral()[0]);
+		assertNull(computerSystem.getPeripherals()[0]);
 	}
 	
 	@Test
