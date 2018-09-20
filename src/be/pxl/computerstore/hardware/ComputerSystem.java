@@ -68,7 +68,7 @@ public class ComputerSystem implements Computable {
 
     public void removePeripheral(String articleNumber){
         for (int i = 0; i < this.peripheral.length ; i++){
-            if (this.peripheral[i].getArticleNumber().equals(articleNumber)){
+            if (this.peripheral[i] != null && this.peripheral[i].getArticleNumber().equals(articleNumber)){
                 this.peripheral[i] = null;
                 break;
             }
